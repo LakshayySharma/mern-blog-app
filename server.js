@@ -14,7 +14,9 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/posts", postRoutes);
-
+app.get("/", (req, res) => {
+  res.send("Heya!!");
+});
 app.listen(process.env.PORT || process.env.LOCALPORT, () => {
   console.log(`server started at port ${process.env.PORT}`);
 });
